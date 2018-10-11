@@ -1,20 +1,21 @@
 package com.radade.api.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="SPA_STATUS")
+@Table(name="RAD_STATUS")
 public class Status extends AbstractEntity<Long> {
 	
-	//@NotNull
-	//@Size(min = 3, max = 20)
-	@Column(name="NOM_STATUS")
+
+	@NotNull
+	@Size(min = 5, max = 50)
 	private String nome;
 	
-	@Column(name="DSC_STATUS")
+	@Size(max = 100)
 	private String descricao;
 
 	public String getNome() {
